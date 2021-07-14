@@ -1,0 +1,46 @@
+.text-center{
+    text-align: center;
+  }
+h1{
+    font-size: 30px;
+    font-weight: lighter;
+    margin-bottom: 5px;
+    color: #407BFF;
+}
+ion-input{
+    border-radius: 20px;
+    background-color: transparent;
+    border: 2px solid rgb(0, 145, 255);
+    outline: none !important;
+    position: relative;
+    z-index: 50;
+    text-align: center;
+
+}
+
+ion-label {
+    color: #fff;
+    pointer-events: none;
+    position: relative;
+    top: calc(50% - 29px);
+    left: 20px;
+    transition: all 0.1s linear;
+    -webkit-transition: all 0.1s linear;
+    -moz-transition: all 0.1s linear;
+    background-color:rgb(255, 255, 255);
+    padding-top: 8px;
+    margin-left: 10px;
+    padding-left: 4px;
+    padding-right: 4px;
+    box-sizing: border-box;
+    z-index: 100;
+    width: 60px !important;
+
+}
+ion-item {
+    --highlight-color-focused: none;
+}
+ion-item:focus{
+    border-bottom-color: #fff !important;
+}
+
