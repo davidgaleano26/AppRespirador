@@ -7,8 +7,14 @@ import { IonicModule } from '@ionic/angular';
 import { DataPageRoutingModule } from './data-routing.module';
 
 import { DataPage } from './data.page';
+import { ResultsPage } from '../results/results.page';
 
 @NgModule({
+  entryComponents:[
+    ResultsPage
+  ],
+
+
   imports: [
     CommonModule,
     FormsModule,
