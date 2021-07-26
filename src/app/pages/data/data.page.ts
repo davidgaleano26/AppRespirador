@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { LoadingController, ModalController } from '@ionic/angular';
 import { ResultsPage } from '../results/results.page';
 
 @Component({
@@ -9,20 +9,39 @@ import { ResultsPage } from '../results/results.page';
 })
 export class DataPage implements OnInit {
 
-  constructor(private modalCtrl: ModalController) { }
+  loading: HTMLIonLoadingElement;
+  modal: HTMLIonModalElement;
+  constructor(private modalCtrl: ModalController, private loadingCtrl:LoadingController) { }
 
   ngOnInit() {
   }
   async results(){
-    const modal = await this.modalCtrl.create({
+    this.loadingPage();
+    this.modal = await this.modalCtrl.create({
       component:ResultsPage,
+      cssClass:'cal-modal',
+      backdropDismiss:false,
       componentProps:{
         Resultado:'50%',
       }
 
+
     });
 
-    await modal.present();
+
+    await this.modal.present();
+
+  }
+   async loadingPage(){
+    this.loading = await this.loadingCtrl.create({
+      message: 'Calculando...',
+
+    });
+
+    setTimeout(()=>{
+      this.loading.dismiss();
+    },2000);
+    await this.loading.present();
   }
 
 }
