@@ -1,3 +1,17 @@
-ion-header{
+ion-card-header{
     background-color: #407BFF;
+}
+ion-card-subtitle{
+    color:white !important;
+}
+.image{
+    width: 200px;
+}
+.information{
+    padding-top: 30px;
+}
+.image-title{
+    padding-top: 15px;
+    height: 35px;
+    position: right;
 }
