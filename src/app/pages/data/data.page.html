@@ -1,13 +1,16 @@
+<ion-content>
 <ion-toolbar>
   <ion-buttons  slot="start">
-    <ion-menu-button color="primary"></ion-menu-button>
+    <ion-menu-button color="light"></ion-menu-button>
   </ion-buttons>
 </ion-toolbar>
 
-<ion-content>
-  <h1 class="text-center" >INGRESE LOS DATOS</h1>
 
-
+  <ion-card>
+    <ion-card-header class="ion-padding">
+  <ion-title class="text-center ion-padding" text-capitalize >INGRESE LOS DATOS</ion-title>
+  </ion-card-header>
+  <ion-card-content>
   <ion-item lines="none">
     <ion-label  position="floating">Dato 1</ion-label>
     <ion-input></ion-input>
@@ -28,7 +31,7 @@
     <ion-input></ion-input>
   </ion-item>
 
-
+</ion-card-content>
   <ion-grid fixed>
     <ion-row>
       <ion-col size="10" offset="1">
@@ -41,6 +44,6 @@
   </ion-grid>
 
   <img src="assets/img/img-formulario.svg" alt="">
-
+</ion-card>
 </ion-content>
 

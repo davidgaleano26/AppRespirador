@@ -8,6 +8,7 @@ import { DataPageRoutingModule } from './data-routing.module';
 
 import { DataPage } from './data.page';
 import { ResultsPage } from '../results/results.page';
+import { ResultsPageModule } from '../results/results.module';
 
 @NgModule({
   entryComponents:[
@@ -19,7 +20,8 @@ import { ResultsPage } from '../results/results.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    DataPageRoutingModule
+    DataPageRoutingModule,
+    ResultsPageModule
   ],
   declarations: [DataPage]
 })
