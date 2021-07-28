@@ -1,17 +1,25 @@
-ion-card-header{
-    background-color: #407BFF;
+ion-slide{
+    display: block;
 }
-ion-card-subtitle{
-    color:white !important;
+img{
+    max-height: 400px;
 }
-.image{
-    width: 200px;
+.slide-img-padding{
+    padding: 40px;
 }
-.information{
-    padding-top: 30px;
+
+h3{
+    font-size: 30px;
+    font-weight: lighter;
+    margin-bottom: 60px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
-.image-title{
-    padding-top: 15px;
-    height: 35px;
-    position: right;
+.btn-primary{
+    height: 60px;
+}
+@media screen and (max-height:775px){
+    img{
+        width: 70%;
+    }
 }

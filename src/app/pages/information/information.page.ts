@@ -7,6 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InformationPage implements OnInit {
 
+    slides = [
+      {
+        img: 'assets/img/img-doctors.svg',
+        titulo: '<strong>APP<br>RESPIRADOR</strong>'
+      },
+      {
+        img: 'assets/img/img-doctor2.svg',
+        titulo: '<strong>¿Como se usa?</strong><br><h3>Se añaden a la tabla de calcular los datos requeridos para poder saber el resultado, una vez puestos el app calculará el porcentaje de exito en la extubacion</h3>'
+      },
+      {
+        img: 'assets/img/img-author.svg',
+        titulo: '<strong>Derechos de autor</strong>'
+      }
+    ];
   constructor() { }
 
   ngOnInit() {
