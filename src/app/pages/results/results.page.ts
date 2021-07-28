@@ -22,7 +22,7 @@ export class ResultsPage implements OnInit {
   ngAfterViewInit() {
     setTimeout(()=>{
       this.modalReady = true;
-    }, 2305)
+    }, 2300)
   }
 
 
