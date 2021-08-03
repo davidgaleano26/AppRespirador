@@ -19,7 +19,7 @@ export class DataPage implements OnInit {
   numberTwo:any;
   numberThree:any;
   numberFour:any;
-  result:number;
+  result:any;
 
 
   async results(){
@@ -56,10 +56,10 @@ export class DataPage implements OnInit {
 
 
   calculate(){
-    let numberOne = parseInt(this.numberOne);
-    let numberTwo = parseInt(this.numberTwo);
-    let numberThree = parseInt(this.numberThree);
-    let numberFour = parseInt(this.numberFour);
+    let numberOne = parseFloat(this.numberOne);
+    let numberTwo = parseFloat(this.numberTwo);
+    let numberThree = parseFloat(this.numberThree);
+    let numberFour = parseFloat(this.numberFour);
 
     this.result = numberOne + numberTwo +numberThree +numberFour;
 
