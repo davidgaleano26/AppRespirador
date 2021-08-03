@@ -61,7 +61,7 @@ export class DataPage implements OnInit {
     let numberThree = parseFloat(this.numberThree);
     let numberFour = parseFloat(this.numberFour);
 
-    this.result = numberOne + numberTwo +numberThree +numberFour;
+    this.result = numberOne + numberTwo +numberThree +numberFour.toFixed(2);
 
   }
 
