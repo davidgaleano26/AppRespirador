@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { DataPage } from '../data/data.page';
 
 @Component({
   selector: 'app-results',
@@ -10,14 +11,19 @@ export class ResultsPage implements OnInit {
 
   porcentaje = 0.5;
   @Input() Resultado;
+  @Input() resultP;
+
+
 
   modalReady = false;
   constructor(private modalCtrl: ModalController) { }
 
   ngOnInit() {
+
   }
   salirSin(){
     this.modalCtrl.dismiss();
+
   }
   ngAfterViewInit() {
     setTimeout(()=>{

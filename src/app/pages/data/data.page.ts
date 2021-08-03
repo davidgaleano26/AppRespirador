@@ -15,18 +15,28 @@ export class DataPage implements OnInit {
 
   ngOnInit() {
   }
+  numberOne:any;
+  numberTwo:any;
+  numberThree:any;
+  numberFour:any;
+  result:number;
+
+
   async results(){
+    this.calculate()
     this.loadingPage();
+    var toString = this.result.toString()
     this.modal = await this.modalCtrl.create({
       component:ResultsPage,
       cssClass:'cal-modal',
       backdropDismiss:false,
       componentProps:{
-        Resultado:'50%',
+        Resultado:this.result,
+
       }
 
-
     });
+
 
 
     await this.modal.present();
@@ -42,6 +52,17 @@ export class DataPage implements OnInit {
       this.loading.dismiss();
     },2000);
     await this.loading.present();
+  }
+
+
+  calculate(){
+    let numberOne = parseInt(this.numberOne);
+    let numberTwo = parseInt(this.numberTwo);
+    let numberThree = parseInt(this.numberThree);
+    let numberFour = parseInt(this.numberFour);
+
+    this.result = numberOne + numberTwo +numberThree +numberFour;
+
   }
 
 }
