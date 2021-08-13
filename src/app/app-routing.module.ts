@@ -27,7 +27,15 @@ const routes: Routes = [
   {
     path: 'information',
     loadChildren: () => import('./pages/information/information.module').then( m => m.InformationPageModule)
+  },  {
+    path: 'contact',
+    loadChildren: () => import('./pages/contact/contact.module').then( m => m.ContactPageModule)
+  },
+  {
+    path: 'institution',
+    loadChildren: () => import('./pages/institution/institution.module').then( m => m.InstitutionPageModule)
   }
+
 
 
 
