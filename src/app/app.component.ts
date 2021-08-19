@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
@@ -15,5 +16,7 @@ export class AppComponent {
     
   ];
   // public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
-  constructor() {}
+  constructor(private http: HttpClient) {
+    http.get('http://localhost:8000/api/hospital').subscribe(console.log);
+  }
 }
