@@ -1,11 +1,46 @@
 <ion-toolbar class="ion-no-border" color="primary">
-  <ion-title>Resultado</ion-title>
+  <ion-text >
+    <h4 class="text-center">INGRESE LOS SIGUIENTES DATOS</h4>
+  </ion-text>
 </ion-toolbar>
 
 <ion-content *ngIf="modalReady" class="ion-padding">
 
 
+  <ion-card>
+    <ion-card-header class="ion-padding">
   
+  </ion-card-header>
+  <ion-card-content>
+  <ion-item lines="none">
+    <ion-label  name="numberOne"  position="floating">Hospital</ion-label>
+    <ion-select></ion-select>
+  </ion-item>
+
+  <ion-item lines="none">
+    <ion-label  name="numberTwo" position="floating">ID Paciente</ion-label>
+    <ion-input name="numberTwo" [(ngModel)]="numberTwo"></ion-input>
+  </ion-item>
+
+  
+
+</ion-card-content>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="10" offset="1">
+        <ion-button color="danger" expand="full" shape="round" >
+          CANCELAR
+        </ion-button>
+        <ion-button color="primary" expand="full" shape="round" >
+          CONTINUAR
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+  <img src="assets/img/img-formulario.svg" alt="">
+</ion-card>
 
 
 
