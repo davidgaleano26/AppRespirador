@@ -27,7 +27,8 @@ const routes: Routes = [
   {
     path: 'information',
     loadChildren: () => import('./pages/information/information.module').then( m => m.InformationPageModule)
-  },  {
+  },
+  {
     path: 'contact',
     loadChildren: () => import('./pages/contact/contact.module').then( m => m.ContactPageModule)
   },
@@ -36,13 +37,8 @@ const routes: Routes = [
     loadChildren: () => import('./pages/institution/institution.module').then( m => m.InstitutionPageModule)
   },
   {
-<<<<<<< HEAD
-    path: 'hospital',
-    loadChildren: () => import('./pages/hospital/hospital.module').then( m => m.HospitalPageModule)
-=======
     path: 'hospitals',
     loadChildren: () => import('./pages/hospitals/hospitals.module').then( m => m.HospitalsPageModule)
->>>>>>> 2ee6ad03f1d0c6fe38e328acb23161839c69a80c
   }
 
 
