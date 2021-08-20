@@ -3,7 +3,7 @@ import { ModalController, LoadingController } from '@ionic/angular';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { HospitalService } from '../../services/hospital.service';
-import { Hospital } from '../hospital/hospital.model';
+import { Hospital } from '../hospitals/hospitals.model';
 
 @Component({
   selector: 'app-institution',
