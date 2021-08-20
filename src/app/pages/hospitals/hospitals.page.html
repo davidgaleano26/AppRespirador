@@ -1,0 +1,49 @@
+<ion-content>
+  <ion-toolbar>
+    <ion-buttons  slot="start">
+      <ion-menu-button color="primary"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+  
+  
+    <ion-card>
+      <ion-card-header class="ion-padding">
+    <ion-title class="text-center ion-padding" text-capitalize >INGRESE EL HOSPITAL</ion-title>
+    </ion-card-header>
+    <ion-card-content>
+    <ion-item lines="none">
+      <ion-label  name="numberOne"  position="floating">Hospital</ion-label>
+      <ion-input name="numberOne" [(ngModel)]="numberOne" ></ion-input>
+    </ion-item>
+  
+    
+  
+  
+  </ion-card-content>
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="10" offset="1">
+          <ion-button color="danger" expand="full" shape="round" href="/home" >
+            CANCELAR
+          </ion-button>
+          <ion-button color="primary" expand="full" shape="round" href="/home">
+            CONTINUAR
+          </ion-button>
+          <ion-button color="primary" expand="full" shape="round" (click)="presentAlert1">
+            GUARDAR
+          </ion-button>
+        </ion-col>
+      </ion-row>
+  
+    </ion-grid>
+
+    <ion-row id="home">
+      <ion-col size="2"></ion-col>
+    <ion-col size="8" >
+      <img src="assets/img/img-hospital.svg" class="img-responsive"  id="img2">
+    </ion-col>
+  </ion-row>
+  
+    
+  </ion-card>
+  </ion-content>
