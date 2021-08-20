@@ -16,7 +16,7 @@ export class AppComponent {
     
   ];
   // public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
-  constructor(private http: HttpClient) {
-    http.get('http://localhost:8000/api/hospital').subscribe(console.log);
+  constructor() {
+    
   }
 }
