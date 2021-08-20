@@ -19,6 +19,7 @@ export class DataPage implements OnInit {
   numberTwo:any;
   numberThree:any;
   numberFour:any;
+  numberFive:any;
   result:any;
 
 
@@ -60,8 +61,9 @@ export class DataPage implements OnInit {
     let numberTwo = parseFloat(this.numberTwo);
     let numberThree = parseFloat(this.numberThree);
     let numberFour = parseFloat(this.numberFour);
+    let numberFive = parseFloat(this.numberFive);
 
-    this.result = numberOne + numberTwo +numberThree +numberFour;
+    this.result = numberOne + numberTwo +numberThree +numberFour +numberFive;
 
   }
 

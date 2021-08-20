@@ -3,8 +3,15 @@
     <ion-menu contentId="main-content" type="overlay">
       <ion-content>
        <!--  <div class="menu-header-bg"></div> -->
+       
+        <ion-row id="home">
+          <ion-col size="2"></ion-col>
+        <ion-col size="8" >
+          <img src="assets/img/mederi3.png" class="img-responsive"  id="img2">
+        </ion-col>
+      </ion-row>
         <ion-list  id="inbox-list">
-          <ion-list-header>App Respirador</ion-list-header>
+          <ion-list-header>ABCDMed Score</ion-list-header>
           <!-- <ion-note>hi@ionicframework.com</ion-note> -->
 
           <ion-menu-toggle  auto-hide="false" *ngFor="let p of appPages; let i = index">

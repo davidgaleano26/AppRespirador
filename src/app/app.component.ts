@@ -10,7 +10,7 @@ export class AppComponent {
     { title: 'Inicio', url: '/home', icon: "home" },
     { title: 'Calcular', url: '/data', icon: "calculator" },
     { title: 'Información', url: '/information', icon: "information-circle" },
-    { title: 'Contacto', url: '/contact', icon: "call" },
+     { title: 'Crear Hospital', url: '/hospitals', icon: "medical" },
     
     
   ];

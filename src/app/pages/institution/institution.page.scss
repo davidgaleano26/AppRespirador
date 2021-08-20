@@ -38,8 +38,7 @@ ion-item:focus{
   border-bottom-color: #fff !important;
 }
 ion-card{
-border-top-left-radius:8.5em;
-border-bottom-right-radius:8.5em;
+
 box-shadow:-3px 15px 15px #242326;
 overflow: hidden;
 
@@ -53,4 +52,15 @@ img{
 h4{
   padding-left: 15px;
 }
+a{
+  font-size: 10px;
+  position: right;
+}
+ion-select{
+  border: 2px solid rgb(0, 145, 255);
+  border-radius: 20px;
+  background-color: transparent;
+}
+
+
 
