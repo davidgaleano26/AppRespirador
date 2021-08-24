@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { AlertController, ModalController } from '@ionic/angular';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AlertController, ModalController, LoadingController } from '@ionic/angular';
 import { ToastController } from '@ionic/angular';
-
+import { pipe } from 'rxjs';
+import { take } from 'rxjs/operators';
+import { HospitalService } from '../../services/hospital.service';
 
 @Component({
   selector: 'app-hospitals',
@@ -10,11 +13,14 @@ import { ToastController } from '@ionic/angular';
 })
 export class HospitalsPage implements OnInit {
 
+  form:FormGroup;
   modalReady = false;
-  constructor(private modalCtrl: ModalController, public toastController: ToastController, public alertController: AlertController) { }
+  constructor(private modalCtrl: ModalController, public toastController: ToastController, public alertController: AlertController, private hospitalsService: HospitalService, private loadingCtrl: LoadingController) { }
 
   ngOnInit() {
-
+    this.form = new FormGroup({
+      name: new FormControl(null,[Validators.required]),
+    });
   }
   salirSin(){
     this.modalCtrl.dismiss();
@@ -43,6 +49,16 @@ export class HospitalsPage implements OnInit {
     await alert.present()
     let result = await alert.onDidDismiss();
     console.log(result);
+  }
+  async submitHospital(){
+    const loading = await this.loadingCtrl.create({message:'Guardando...'})
+    loading.present();
+    this.hospitalsService.addHospital(this.form.value).pipe(
+      take(1)
+    ).subscribe((hospital)=>{
+      console.log(hospital);
+      loading.dismiss();
+    })
   }
 
 }

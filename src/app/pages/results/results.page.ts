@@ -19,7 +19,8 @@ export class ResultsPage implements OnInit {
   constructor(private modalCtrl: ModalController) { }
 
   ngOnInit() {
-
+    console.log(this.Resultado);
+    
   }
   salirSin(){
     this.modalCtrl.dismiss();

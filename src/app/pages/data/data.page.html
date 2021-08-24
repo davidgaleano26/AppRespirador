@@ -1,70 +1,68 @@
 <ion-content>
-<ion-toolbar>
-  <ion-buttons  slot="start">
-    <ion-menu-button color="primary"></ion-menu-button>
-  </ion-buttons>
-</ion-toolbar>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button color="primary"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
 
 
   <ion-card>
     <ion-card-header class="ion-padding">
-  <ion-title class="text-center ion-padding" text-capitalize >INGRESE LOS DATOS</ion-title>
-  </ion-card-header>
-  <ion-card-content>
-  <ion-item lines="none">
-    <ion-label  name="numberOne"  position="floating">Acid/Base status (PH value)</ion-label>
-    <ion-input name="numberOne" [(ngModel)]="numberOne" ></ion-input>
-  </ion-item>
+      <ion-title class="text-center ion-padding" text-capitalize>INGRESE LOS DATOS</ion-title>
+    </ion-card-header>
+    <form [formGroup]='form'>
+      <ion-item lines="none">
+        <ion-label name="numberOne" position="floating">Acid/Base status (PH value)</ion-label>
+        <ion-input formControlName='acid_basestatus' name="numberOne" [(ngModel)]="numberOne"></ion-input>
+      </ion-item>
 
-  <ion-item lines="none">
-    <ion-label  name="numberTwo" position="floating">Breathing test (RSBI)</ion-label>
-    <ion-input name="numberTwo" [(ngModel)]="numberTwo"></ion-input>
-  </ion-item>
+      <ion-item lines="none">
+        <ion-label name="numberTwo" position="floating">Breathing test (RSBI)</ion-label>
+        <ion-input formControlName='rsbi' name="numberTwo" [(ngModel)]="numberTwo"></ion-input>
+      </ion-item>
 
-  <ion-item lines="none">
-    <ion-label  name="numberThree" position="floating" >Cough (Effective=1)*</ion-label>
-    <ion-input name="numberThree" [(ngModel)]="numberThree"></ion-input>
-  </ion-item>
+      <ion-item lines="none">
+        <ion-label name="numberThree" position="floating">Cough (Effective=1)*</ion-label>
+        <ion-input formControlName='efective_cough' name="numberThree" [(ngModel)]="numberThree"></ion-input>
+      </ion-item>
 
-  <ion-item lines="none">
-    <ion-label  name="numberFour" position="floating"  >Death Probability(Apache/EUROScore)</ion-label>
-    <ion-input name="numberFour" [(ngModel)]="numberFour" ></ion-input>
-  </ion-item>
+      <ion-item lines="none">
+        <ion-label name="numberFour" position="floating">Death Probability(Apache/EUROScore)</ion-label>
+        <ion-input formControlName='death_probability' name="numberFour" [(ngModel)]="numberFour"></ion-input>
+      </ion-item>
 
-  <ion-item lines="none">
-    <ion-label  name="numberFive" position="floating"  >Medical Patient (Medical=1)!</ion-label>
-    <ion-input name="numberFive" [(ngModel)]="numberFive" ></ion-input>
-  </ion-item>
+      <ion-item lines="none">
+        <ion-label name="numberFive" position="floating">Medical Patient (Medical=1)!</ion-label>
+        <ion-input formControlName='medical_patient' name="numberFive" [(ngModel)]="numberFive"></ion-input>
+      </ion-item>
 
-  <ion-item lines="none">
-    <ion-label  name="numberSix" position="floating"  >Excursión Diafragmática</ion-label>
-    <ion-input name="numberSix" [(ngModel)]="numberSix" ></ion-input>
-  </ion-item>
+      <ion-item lines="none">
+        <ion-label name="numberSix" position="floating">Excursión Diafragmática</ion-label>
+        <ion-input formControlName='excur_diafrag' name="numberSix" [(ngModel)]="numberSix"></ion-input>
+      </ion-item>
 
-  <ion-item lines="none">
-    <ion-label  name="numberSeven" position="floating"  >Engoramiento Diafragmático</ion-label>
-    <ion-input name="numberSeven" [(ngModel)]="numberSeven" ></ion-input>
-  </ion-item>
+      <ion-item lines="none">
+        <ion-label name="numberSeven" position="floating">Engoramiento Diafragmático</ion-label>
+        <ion-input formControlName='engro_diafrag' name="numberSeven" [(ngModel)]="numberSeven"></ion-input>
+      </ion-item>
 
-  <ion-item lines="none">
-    <ion-label  name="numberEight" position="floating"  >Velocidad de contracción diafragmática</ion-label>
-    <ion-input name="numberEight" [(ngModel)]="numberEight" ></ion-input>
-  </ion-item>
+      <ion-item lines="none">
+        <ion-label name="numberEight" position="floating">Velocidad de contracción diafragmática</ion-label>
+        <ion-input formControlName='velcontrac_diafra' name="numberEight" [(ngModel)]="numberEight"></ion-input>
+      </ion-item>
+     
+      <ion-grid fixed>
+        <ion-row>
+          <ion-col size="10" offset="1">
+            <ion-button color="primary" expand="full" shape="round" (click)="results()">
+              CALCULAR
+            </ion-button>
+          </ion-col>
+        </ion-row>
 
+      </ion-grid>
+    </form>
 
-</ion-card-content>
-  <ion-grid fixed>
-    <ion-row>
-      <ion-col size="10" offset="1">
-        <ion-button color="primary" expand="full" shape="round" (click)="results()">
-          CALCULAR
-        </ion-button>
-      </ion-col>
-    </ion-row>
-
-  </ion-grid>
-
-  <img src="assets/img/img-formulario.svg" alt="">
-</ion-card>
+    <img src="assets/img/img-formulario.svg" alt="">
+  </ion-card>
 </ion-content>
-
