@@ -22,7 +22,7 @@
               CANCELAR
             </ion-button>
             <ion-button color="primary" expand="full" shape="round" (click)="submitHospital()"
-              [disabled]="form.invalid">
+              [disabled]="form.invalid" (click)="showAlert">
               GUARDAR
             </ion-button>
           </ion-col>
