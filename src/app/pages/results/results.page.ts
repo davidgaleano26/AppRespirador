@@ -11,6 +11,7 @@ export class ResultsPage implements OnInit {
 
   porcentaje = 0.5;
   @Input() Resultado;
+  @Input() resultTwo;
   @Input() resultP;
 
 
@@ -20,17 +21,41 @@ export class ResultsPage implements OnInit {
 
   ngOnInit() {
     console.log(this.Resultado);
-    
+
   }
-  salirSin(){
+  salirSin() {
     this.modalCtrl.dismiss();
 
   }
   ngAfterViewInit() {
-    setTimeout(()=>{
+    setTimeout(() => {
       this.modalReady = true;
     }, 2300)
   }
 
+  setResultColor(Result) {
+    if (Result < '5') {
+      return 'red';
+    } else if (Result >= '5' && Result < '10') {
+      return 'yellow';
+    } else if (Result >= '10' && Result < '15') {
+      return 'orange';
+    } else {
+      return 'green';
+    }
+
+  }
+  // setResultColo(Result) {
+  //   switch (Result) {
+  //     case (Result < '5'):
+  //       return 'green';
+  //     case (Result >= '5' && Result < '10'):
+  //       return 'yellow';
+  //     case (Result >= '10' && Result < '15'):
+  //       return 'orange';
+  //     case (Result >= '15'):
+  //       return 'red';
+  //   }
+  // }
 
 }

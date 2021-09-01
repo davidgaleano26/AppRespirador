@@ -12,6 +12,18 @@
       <ion-input name="numberTwo" [(ngModel)]="numberTwo" formControlName="paciente_id" ></ion-input>
     </ion-item>
 
+<<<<<<< HEAD
+=======
+  <ion-card>
+    <ion-card-header class="ion-padding">
+  
+  </ion-card-header>
+  <ion-card-content>
+    <ion-item>
+      <ion-label>Hospital</ion-label>
+      <ion-select  value="notifications" interface="action-sheet">
+        <ion-select-option *ngFor = "let hospital of hospitals$|async" [value]="hospital">{{hospital.name}}</ion-select-option>
+>>>>>>> tester
 
 
     
@@ -25,8 +37,14 @@
       <ion-select [interfaceOptions]="customAlertOptions" interface="alert" multiple="false" placeholder="Seleccione un Hospital" formControlName="hospital">
         <ion-select-option *ngFor = "let hospital of hospitals$|async" [value]="hospital"  >{{hospital.name}}</ion-select-option>
 
+<<<<<<< HEAD
       </ion-select>
     
+=======
+  <ion-item lines="none">
+    <ion-label  name="paciente_id" position="floating">ID Paciente</ion-label>
+    <ion-input name="paciente_id" [(ngModel)]="paciente_id"></ion-input>
+>>>>>>> tester
   </ion-item>
 
   <a href="/hospitals">AGREGAR HOSPITAL</a>
@@ -39,12 +57,16 @@
         <ion-button color="danger" expand="full" shape="round" href="/home" >
           CANCELAR
         </ion-button>
+<<<<<<< HEAD
         
       </ion-col>
     
       
       <ion-col size="5" offset="1">
         <ion-button color="primary" expand="full" shape="round" href="/data" [disabled]="form.invalid">
+=======
+        <ion-button color="primary" expand="full" shape="round" href="/data" (click)="submitHospital()">
+>>>>>>> tester
           CONTINUAR
         </ion-button>
       </ion-col>
