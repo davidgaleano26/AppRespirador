@@ -33,29 +33,24 @@ export class ResultsPage implements OnInit {
     }, 2300)
   }
 
-  setResultColor(Result) {
-    if (Result < '5') {
-      return 'red';
-    } else if (Result >= '5' && Result < '10') {
-      return 'yellow';
-    } else if (Result >= '10' && Result < '15') {
-      return 'orange';
-    } else {
-      return 'green';
-    }
 
-  }
-  // setResultColo(Result) {
-  //   switch (Result) {
-  //     case (Result < '5'):
-  //       return 'green';
-  //     case (Result >= '5' && Result < '10'):
-  //       return 'yellow';
-  //     case (Result >= '10' && Result < '15'):
-  //       return 'orange';
-  //     case (Result >= '15'):
-  //       return 'red';
-  //   }
-  // }
+   setResultColo(Result) {
+    switch (Result) {
+       case (Result < 5):
+         return 'green';
+         break;
+       case (Result >= 5 && Result < 10):
+         return 'yellow';
+         break;
+       case (Result >= 10 && Result < 15):
+         return 'orange';
+         break;
+       case (Result >= 15):
+        return 'red';
+      default:
+        return 'blue';
+        break;
+    } 
+   }
 
 }
