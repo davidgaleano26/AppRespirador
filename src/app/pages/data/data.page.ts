@@ -34,6 +34,7 @@ export class DataPage implements OnInit {
       engro_diafrag: new FormControl(null,[Validators.required]),
       velcontrac_diafra: new FormControl(null,[Validators.required]),
       paciente_id: new FormControl(null,[Validators.required]),
+      hospital_id: new FormControl(null, [Validators.required]),
     });
   }
   numberOne:any;
@@ -106,6 +107,7 @@ export class DataPage implements OnInit {
       engro_diafrag: this.form.get('engro_diafrag').value,
       velcontrac_diafra: this.form.get('velcontrac_diafra').value,
       paciente_id: this.form.get('paciente_id').value,
+      hospital_id: this.form.get('hospital_id').value,
     }
   this.hospitalService.addData(formulario).pipe(
     take(1)

@@ -8,7 +8,7 @@
 
   <ion-card>
     <ion-card-header class="ion-padding">
-      <ion-title class="text-center ion-padding" text-capitalize>INGRESE EL HOSPITAL</ion-title>
+      <ion-title class="text-center ion-padding" text-capitalize color="primary">CREAR HOSPITAL</ion-title>
     </ion-card-header>
     <form [formGroup]='form'>
       <ion-item lines="none">
@@ -22,13 +22,14 @@
               CANCELAR
             </ion-button>
             <ion-button color="primary" expand="full" shape="round" (click)="submitHospital()"
-              [disabled]="form.invalid">
+              [disabled]="form.invalid" >
               GUARDAR
             </ion-button>
           </ion-col>
         </ion-row>
       </ion-grid>
     </form>
+
     <ion-row id="home">
       <ion-col size="2"></ion-col>
       <ion-col size="8">

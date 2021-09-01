@@ -12,6 +12,9 @@ ion-input{
   text-align: center;
 
 }
+ion-toolbar{
+  height: 11% !important;
+}
 ion-label {
   color: #fff;
   pointer-events: none;
@@ -43,13 +46,17 @@ box-shadow:-3px 15px 15px #242326;
 overflow: hidden;
 
 }
+.hospitalabel{
+  
+}
 @media screen and (max-height:760px){
 img{
     width: 100%;
 }
 
 }
-h4{
+h6{
+  margin: -2% 0% 1%;
   padding-left: 15px;
 }
 a{
@@ -57,10 +64,9 @@ a{
   position: right;
 }
 ion-select{
-  border: 2px solid rgb(0, 145, 255);
-  border-radius: 20px;
-  background-color: transparent;
+  // border: 2px solid rgb(0, 145, 255);
+  // border-radius: 20px;
+  // background-color: transparent;
+  // --padding-end: 30px;
+  
 }
-
-
-

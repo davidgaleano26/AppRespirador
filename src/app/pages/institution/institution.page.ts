@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ModalController, LoadingController } from '@ionic/angular';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
@@ -13,12 +14,18 @@ import { Hospital } from '../hospitals/hospitals.model';
 export class InstitutionPage implements OnInit {
   hospitals$: Observable<Hospital[]>;
 
+  form:FormGroup;
   modalReady = false;
   constructor(private modalCtrl: ModalController, private hospitalService: HospitalService, private loadingCtrl:LoadingController) { }
 
   async ngOnInit() {
     const loading = await this.loadingCtrl.create({message: 'Cargando...'});
     loading.present();
+
+    this.form = new FormGroup({
+      hospital: new FormControl(null,[Validators.required]),
+      paciente_id: new FormControl(null,[Validators.required]),
+    });
 
     this.hospitals$ = this.hospitalService.getHospitals().pipe(
       tap(hospitals =>{

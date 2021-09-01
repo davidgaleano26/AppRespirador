@@ -25,7 +25,7 @@ export class HomePage implements OnInit {
     this.loadingPage();
     this.modal = await this.modalCtrl.create({
       component:InstitutionPage,
-      cssClass:'cal-modal',
+      cssClass:'modalHospitals',
       backdropDismiss:false,
       componentProps:{
 
