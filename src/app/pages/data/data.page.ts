@@ -5,7 +5,7 @@ import { ResultsPage } from '../results/results.page';
 import { HospitalService } from '../../services/hospital.service';
 import { take } from 'rxjs/operators';
 import { StorageService } from '../../services/storage.service';
-import { DataInformation } from './data.model';
+import { DataInformation } from '../data/data.model';
 
 @Component({
   selector: 'app-data',
