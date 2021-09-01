@@ -1,59 +1,34 @@
 <ion-toolbar class="ion-no-border" color="primary">
-  
-    <h6 class="text-center">INGRESE LOS SIGUIENTES DATOS</h6>
-  
+  <h6 class="text-center">INGRESE LOS SIGUIENTES DATOS</h6>
 </ion-toolbar>
-
 <ion-content *ngIf="modalReady" class="ion-padding">
   <form [formGroup]='form'>
-
     <ion-item lines="none">
-      <ion-label  name="numberTwo" position="floating">ID Paciente</ion-label>
-      <ion-input name="numberTwo" [(ngModel)]="numberTwo" formControlName="paciente_id" ></ion-input>
+      <ion-label name="numberTwo" position="floating">ID Paciente</ion-label>
+      <ion-input name="numberTwo" [(ngModel)]="numberTwo" formControlName="paciente_id"></ion-input>
     </ion-item>
-
-  <ion-card>
-    <ion-card-header class="ion-padding">
-  
-  </ion-card-header>
-  <ion-card-content>
     <ion-item>
-      <ion-label>Hospital</ion-label>
-      <ion-select  value="notifications" interface="action-sheet">
-        <ion-select-option *ngFor = "let hospital of hospitals$|async" [value]="hospital">{{hospital.name}}</ion-select-option>
-
-
-    
-      
-    
-
-  <ion-item>
-    
       <ion-label class="hospitalabel">Hospital</ion-label>
-
-      <ion-select [interfaceOptions]="customAlertOptions" interface="alert" multiple="false" placeholder="Seleccione un Hospital" formControlName="hospital">
-        <ion-select-option *ngFor = "let hospital of hospitals$|async" [value]="hospital"  >{{hospital.name}}</ion-select-option>
-
-  <ion-item lines="none">
-    <ion-label  name="paciente_id" position="floating">ID Paciente</ion-label>
-    <ion-input name="paciente_id" [(ngModel)]="paciente_id"></ion-input>
-  </ion-item>
-
-  <a href="/hospitals">AGREGAR HOSPITAL</a>
-
-  
-
-  <ion-grid fixed>
-    <ion-row>
-      <ion-col size="5" offset="1">
-        <ion-button color="danger" expand="full" shape="round" href="/home" >
-          CANCELAR
-        </ion-button>
-        <ion-button color="primary" expand="full" shape="round" href="/data" (click)="submitHospital()">
-          CONTINUAR
-        </ion-button>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-</form>
+      <ion-select [interfaceOptions]="customAlertOptions" interface="alert" multiple="false"
+        placeholder="Seleccione un Hospital" formControlName="hospital">
+        <ion-select-option *ngFor="let hospital of hospitals$|async" [value]="hospital">{{hospital.name}}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+    <a href="/hospitals">AGREGAR HOSPITAL</a>
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="5" offset="1">
+          <ion-button color="danger" expand="full" shape="round" href="/home">
+            CANCELAR
+          </ion-button>
+        </ion-col>
+        <ion-col size="5" offset="1">
+          <ion-button color="primary" expand="full" shape="round" href="/data" [disabled]="form.invalid">
+            CONTINUAR
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
 </ion-content>
