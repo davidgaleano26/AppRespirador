@@ -33,17 +33,17 @@ export class ResultsPage implements OnInit {
     }, 2300)
   }
 
-  setResultColor(Result) {
-    if (Result < '5') {
+  setResultColor(Resultado) {
+    if (Resultado < '5') {
       return 'red';
-    } else if (Result >= '5' && Result < '10') {
+    } else if (Resultado >= '5' && Resultado <= '10') {
       return 'yellow';
-    } else if (Result >= '10' && Result < '15') {
+    } else if (Resultado > '10' && Resultado <= '15') {
       return 'orange';
-    } else {
+    }else if (Resultado > '15') {
       return 'green';
     }
-
+    
   }
   // setResultColo(Result) {
   //   switch (Result) {
