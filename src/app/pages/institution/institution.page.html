@@ -14,7 +14,7 @@
   <ion-card-content>
     <ion-item>
       <ion-label>Hospital</ion-label>
-      <ion-select value="notifications" interface="action-sheet">
+      <ion-select  value="notifications" interface="action-sheet">
         <ion-select-option *ngFor = "let hospital of hospitals$|async" [value]="hospital">{{hospital.name}}</ion-select-option>
 
       </ion-select>
@@ -23,8 +23,8 @@
   <a href="/hospitals">AGREGAR HOSPITAL</a>
 
   <ion-item lines="none">
-    <ion-label  name="numberTwo" position="floating">ID Paciente</ion-label>
-    <ion-input name="numberTwo" [(ngModel)]="numberTwo"></ion-input>
+    <ion-label  name="paciente_id" position="floating">ID Paciente</ion-label>
+    <ion-input name="paciente_id" [(ngModel)]="paciente_id"></ion-input>
   </ion-item>
 
   
@@ -36,7 +36,7 @@
         <ion-button color="danger" expand="full" shape="round" href="/home" >
           CANCELAR
         </ion-button>
-        <ion-button color="primary" expand="full" shape="round" href="/data">
+        <ion-button color="primary" expand="full" shape="round" href="/data" (click)="submitHospital()">
           CONTINUAR
         </ion-button>
       </ion-col>

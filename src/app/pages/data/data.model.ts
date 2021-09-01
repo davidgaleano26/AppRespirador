@@ -8,5 +8,6 @@ export interface DataInformation{
     excur_diafrag:number;
     engro_diafrag:number;
     velcontrac_diafra:number;
-    paciente_id:number;
+    paciente_id:string;
+    hospital_id:string;
 }

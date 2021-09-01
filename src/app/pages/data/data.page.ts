@@ -4,6 +4,8 @@ import { LoadingController, ModalController } from '@ionic/angular';
 import { ResultsPage } from '../results/results.page';
 import { HospitalService } from '../../services/hospital.service';
 import { take } from 'rxjs/operators';
+import { StorageService } from '../../services/storage.service';
+import { DataInformation } from './data.model';
 
 @Component({
   selector: 'app-data',
@@ -15,8 +17,13 @@ export class DataPage implements OnInit {
   loading: HTMLIonLoadingElement;
   form:FormGroup;
   modal: HTMLIonModalElement;
-  constructor(private modalCtrl: ModalController, private loadingCtrl:LoadingController, private hospitalService: HospitalService) { }
-
+  dataInformations: DataInformation;
+  constructor(  private modalCtrl: ModalController, 
+                private loadingCtrl:LoadingController, 
+                private hospitalService: HospitalService, 
+                private storageService: StorageService,
+                ) { }
+                
  
   
 
@@ -44,8 +51,15 @@ export class DataPage implements OnInit {
   numberSix:any;
   numberSeven:any;
   numberEight:any;
+  resultOne:any;
+  resultTwo:any;
   result:any;
 
+
+  resultAcid:any;
+  resultRSBI:any;
+  resultDeath:any;
+  numberNine:number;
 
   async results(){
     this.calculate()
@@ -57,6 +71,7 @@ export class DataPage implements OnInit {
       backdropDismiss:false,
       componentProps:{
         Resultado:this.result,
+        resultTwo:this.resultTwo,
 
       }
 
@@ -87,11 +102,26 @@ export class DataPage implements OnInit {
     let numberSix = parseFloat(this.numberSix);
     let numberSeven = parseFloat(this.numberSeven);
     let numberEight = parseFloat(this.numberEight);
+    let numberNine = 0.0022280184;
+    let numberTen = 0.0175100373;
+    let numberEleven = 0.01102682592;
+
+    let numberTwelve = -1.2732828426;
+    let numberThirteen = 0.38731209;
+
+    let numberFourteen = -6.612206;
     
-    
-    this.result = numberOne + numberTwo +numberThree +numberFour +numberFive+ numberSix+numberSeven+numberEight;
+    this.resultAcid = (numberNine * Math.exp(numberOne));
+    this.resultRSBI = (numberTwo * numberTen);
+    this.resultDeath = (numberFour * numberEleven);
+
+    this.resultOne = this.resultAcid + this.resultRSBI + (numberTwelve * numberThree) + this.resultDeath + (numberFive * numberThirteen)+ numberFourteen;
+    this.resultTwo =    ((Math.exp(this.resultOne))/(Math.exp(this.resultOne)+1)*100);
+    this.result =    (Math.round(this.resultTwo *10)/10 );
     this.submitData();
   }
+
+  
 
   
   submitData(){
@@ -105,9 +135,13 @@ export class DataPage implements OnInit {
       excur_diafrag:this.form.get('excur_diafrag').value,
       engro_diafrag: this.form.get('engro_diafrag').value,
       velcontrac_diafra: this.form.get('velcontrac_diafra').value,
-      paciente_id: this.form.get('paciente_id').value,
+      paciente_id: localStorage.getItem('paciente_id'),
+      hospital_id: localStorage.getItem('hospital_id'),
+
     }
-  this.hospitalService.addData(formulario).pipe(
+    
+    
+    this.hospitalService.addData(formulario).pipe(
     take(1)
   ).subscribe((data)=>{
     console.log(data);
@@ -115,5 +149,6 @@ export class DataPage implements OnInit {
   })
   
   }
+  
 
 }
