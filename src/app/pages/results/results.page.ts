@@ -28,8 +28,6 @@ export class ResultsPage implements OnInit {
   }
   async salirSin() {
     this.modalCtrl.dismiss();
-    
-      this.loadingPage();
       this.modal = await  this.modalCtrl.create({
         component:InstitutionPage,
         cssClass:'modalHospitals',

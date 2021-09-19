@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { LoadingController, MenuController, ModalController } from '@ionic/angular';
+import {
+  LoadingController,
+  MenuController,
+  ModalController,
+} from '@ionic/angular';
 
 import { InstitutionPage } from '../institution/institution.page';
 
@@ -12,42 +16,36 @@ export class HomePage implements OnInit {
   loading: HTMLIonLoadingElement;
   modal: HTMLIonModalElement;
 
-  constructor(public menuCtrl: MenuController,private modalCtrl: ModalController,private loadingCtrl:LoadingController) { }
+  constructor(
+    public menuCtrl: MenuController,
+    private modalCtrl: ModalController,
+    private loadingCtrl: LoadingController
+  ) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   ionViewDidEnter() {
     this.menuCtrl.enable(false);
   }
 
-  async institution(){
-    this.loadingPage();
+  async institution() {
     this.modal = await this.modalCtrl.create({
-      component:InstitutionPage,
-      cssClass:'modalHospitals',
-      backdropDismiss:false,
-      componentProps:{
-
-      }
-
+      component: InstitutionPage,
+      cssClass: 'modalHospitals',
+      backdropDismiss: false,
+      componentProps: {},
     });
-
-
 
     await this.modal.present();
-
   }
-  async loadingPage(){
+  async loadingPage() {
     this.loading = await this.loadingCtrl.create({
       message: 'Calculando...',
-
     });
 
-    setTimeout(()=>{
+    setTimeout(() => {
       this.loading.dismiss();
-    },2000);
+    }, 2000);
     await this.loading.present();
   }
-
 }
