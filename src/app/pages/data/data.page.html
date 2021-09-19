@@ -14,7 +14,12 @@
       
       <ion-item>
         <ion-label name="numberOne" position="floating">Acid/Base status (PH value)*</ion-label>
-        <ion-select name="numberOne" [interfaceOptions]="customAlertOptions" [(ngModel)]="numberOne" (ionChange)="optionsFn();" interface="alert" multiple="false"
+        <ion-select required
+        name="numberOne" 
+        [interfaceOptions]="customAlertOptions" 
+        [(ngModel)]="numberOne"  
+        interface="popover" 
+        multiple="false"
           placeholder="Acid/Base status (PH value)*" formControlName='acid_basestatus'>
           <ion-select-option value="7.2">7.2</ion-select-option>
           <ion-select-option value="7.3">7.3</ion-select-option>
@@ -31,14 +36,18 @@
 
       <ion-item lines="none">
         <ion-label name="numberTwo" position="floating" class="small">Breathing test (RSBI)*</ion-label>
-        <ion-input type="number" formControlName='rsbi' name="numberTwo" [(ngModel)]="numberTwo"></ion-input>
+        <ion-input required type="number" formControlName='rsbi' name="numberTwo" [(ngModel)]="numberTwo"></ion-input>
       </ion-item>
       <br>
       <ion-item>
         <ion-label name="numberThree" position="floating">Cough (Effective=1)*</ion-label>
-        <ion-select name="numberThree" [interfaceOptions]="customAlertOptions"
-        [(ngModel)]="numberThree" 
-        (ionChange)="optionsFn();" interface="alert" multiple="false"
+        <ion-select 
+        required
+        name="numberThree" 
+        [interfaceOptions]="customAlertOptions"
+        [(ngModel)]="numberThree"  
+        interface="popover" 
+        multiple="false"
         placeholder="Cough (Effective=1)*" formControlName='efective_cough'>
           <ion-select-option value="1">SI</ion-select-option>
           <ion-select-option value="0">NO</ion-select-option>
@@ -52,15 +61,19 @@
 
       <ion-item lines="none">
         <ion-label name="numberFour" position="floating" class="large" >Death Probability(Apache/EUROScore)</ion-label>
-        <ion-input type="number" formControlName='death_probability' name="numberFour" [(ngModel)]="numberFour"></ion-input>
+        <ion-input  required type="number" formControlName='death_probability' name="numberFour" [(ngModel)]="numberFour"></ion-input>
       </ion-item>
       <br>
       <ion-item>
         <ion-label name="numberFive" position="floating">Medical Patient (Medical=1)!*</ion-label>
-        <ion-select name="numberFive" [interfaceOptions]="customAlertOptions"
-        [(ngModel)]="numberFive" 
-        (ionChange)="optionsFn();" interface="alert" multiple="false"
-        placeholder="Medical Patient (Medical=1)!*" formControlName='medical_patient'>
+        <ion-select 
+        required
+        name="medical_patient" 
+        [(ngModel)]="numberFive"  
+        interface="popover" 
+        multiple="false"
+        placeholder="Medical Patient (Medical=1)!*" 
+        formControlName='medical_patient'>
           <ion-select-option value="1">Médico</ion-select-option>
           <ion-select-option value="0">Quirúrgico</ion-select-option>
         </ion-select>
@@ -89,7 +102,7 @@
       <ion-grid fixed>
         <ion-row>
           <ion-col size="10" offset="1">
-            <ion-button color="primary" expand="full" shape="round" (click)="results()">
+            <ion-button color="primary" expand="full" shape="round" (click)="results()" [disabled]="form.invalid">
               CALCULAR
             </ion-button>
           </ion-col>

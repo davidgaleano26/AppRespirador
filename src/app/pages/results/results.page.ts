@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController, LoadingController, MenuController } from '@ionic/angular';
+import { InstitutionPage } from '../institution/institution.page';
+
 
 @Component({
   selector: 'app-results',
@@ -12,20 +14,43 @@ export class ResultsPage implements OnInit {
   @Input() Resultado;
   @Input() resultTwo;
   @Input() resultP;
+  modal: HTMLIonModalElement;
+  loading: HTMLIonLoadingElement;
 
 
 
   modalReady = false;
-  constructor(private modalCtrl: ModalController) { }
+  constructor(private modalCtrl: ModalController, private loadingCtrl:LoadingController) { }
 
   ngOnInit() {
     console.log(this.Resultado);
 
   }
-  salirSin() {
+  async salirSin() {
     this.modalCtrl.dismiss();
+    
+      this.loadingPage();
+      this.modal = await  this.modalCtrl.create({
+        component:InstitutionPage,
+        cssClass:'modalHospitals',
+        backdropDismiss:false,
+        componentProps:{
+  
+        }
+  
+      });
+  
+      this.modal.present();
+  
+    }
 
-  }
+    async loadingPage(){
+      this.loading = await this.loadingCtrl.create({
+        message: 'Calculando...',
+  
+      });
+    }
+  
   ngAfterViewInit() {
     setTimeout(() => {
       this.modalReady = true;

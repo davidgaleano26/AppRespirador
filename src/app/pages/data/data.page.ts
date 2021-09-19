@@ -21,8 +21,6 @@ export class DataPage implements OnInit {
   dataInformations: DataInformation;
   id_paciente:any;
   id_hospital:any;
-  acid:any;
-  acidvalue: number[];
   constructor(  private modalCtrl: ModalController, 
                 private loadingCtrl:LoadingController, 
                 private hospitalService: HospitalService, 
@@ -46,7 +44,7 @@ export class DataPage implements OnInit {
       excur_diafrag: new FormControl(null,[Validators.required]),
       engro_diafrag: new FormControl(null,[Validators.required]),
       velcontrac_diafra: new FormControl(null,[Validators.required]),
-      hospital_id: new FormControl(null, [Validators.required]),
+      // hospital_id: new FormControl(null, [Validators.required]),
     });
   }
   numberOne:any;
