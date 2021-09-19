@@ -7,14 +7,15 @@
       <ion-label name="numberTwo" position="floating">ID Paciente</ion-label>
       <ion-input name="numberTwo" [(ngModel)]="numberTwo" formControlName="paciente_id"></ion-input>
     </ion-item>
+    <br>
     <ion-item>
-      <ion-label class="hospitalabel">Hospital</ion-label>
       <ion-select [interfaceOptions]="customAlertOptions" [(ngModel)]="place" (ionChange)="optionsFn();" interface="alert" multiple="false"
         placeholder="Seleccione un Hospital" formControlName="hospital">
         <ion-select-option *ngFor="let hospital of hospitals$|async" [value]="hospital">{{hospital.name}}
         </ion-select-option>
       </ion-select>
     </ion-item>
+    <br>
     <a href="/hospitals">AGREGAR HOSPITAL</a>
     <ion-grid fixed>
       <ion-row>

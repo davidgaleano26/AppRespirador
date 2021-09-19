@@ -21,6 +21,8 @@ export class DataPage implements OnInit {
   dataInformations: DataInformation;
   id_paciente:any;
   id_hospital:any;
+  acid:any;
+  acidvalue: number[];
   constructor(  private modalCtrl: ModalController, 
                 private loadingCtrl:LoadingController, 
                 private hospitalService: HospitalService, 
@@ -80,6 +82,7 @@ export class DataPage implements OnInit {
       }
 
     });
+
 
 
 
@@ -155,6 +158,8 @@ export class DataPage implements OnInit {
   })
   
   }
+
+  
   
 
 }

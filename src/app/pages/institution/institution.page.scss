@@ -63,10 +63,15 @@ a{
   font-size: 10px;
   position: right;
 }
-ion-select{
-  // border: 2px solid rgb(0, 145, 255);
-  // border-radius: 20px;
-  // background-color: transparent;
-  // --padding-end: 30px;
-  
+ion-select {
+  width: 100%;
+
+  justify-content: center;
+}
+ion-select::part(placeholder) {
+  color: #20a08a;
+  opacity: 1;
+}
+ion-select::part(text) {
+  flex: 0 0 auto;
 }
