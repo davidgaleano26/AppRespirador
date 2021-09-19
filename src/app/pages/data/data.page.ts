@@ -6,6 +6,7 @@ import { HospitalService } from '../../services/hospital.service';
 import { take } from 'rxjs/operators';
 import { StorageService } from '../../services/storage.service';
 import { DataInformation } from '../data/data.model';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-data',
@@ -18,10 +19,13 @@ export class DataPage implements OnInit {
   form:FormGroup;
   modal: HTMLIonModalElement;
   dataInformations: DataInformation;
+  id_paciente:any;
+  id_hospital:any;
   constructor(  private modalCtrl: ModalController, 
                 private loadingCtrl:LoadingController, 
                 private hospitalService: HospitalService, 
                 private storageService: StorageService,
+                private route: ActivatedRoute
                 ) { }
                 
  
@@ -40,7 +44,6 @@ export class DataPage implements OnInit {
       excur_diafrag: new FormControl(null,[Validators.required]),
       engro_diafrag: new FormControl(null,[Validators.required]),
       velcontrac_diafra: new FormControl(null,[Validators.required]),
-      paciente_id: new FormControl(null,[Validators.required]),
       hospital_id: new FormControl(null, [Validators.required]),
     });
   }
@@ -126,6 +129,9 @@ export class DataPage implements OnInit {
 
   
   submitData(){
+    this.id_paciente= this.route.snapshot.paramMap.get('numberTwo');
+    this.id_hospital= this.route.snapshot.paramMap.get('id');
+    console.log(parseInt(this.id_paciente));
     const formulario = {
       acid_basestatus:this.form.get('acid_basestatus').value ,
       rsbi: this.form.get('rsbi').value,
@@ -136,10 +142,10 @@ export class DataPage implements OnInit {
       excur_diafrag:this.form.get('excur_diafrag').value,
       engro_diafrag: this.form.get('engro_diafrag').value,
       velcontrac_diafra: this.form.get('velcontrac_diafra').value,
-      paciente_id: this.form.get('paciente_id').value,
-      hospital_id: this.form.get('hospital_id').value,
+      paciente_id: parseInt(this.id_paciente) ,
+      hospital_id: parseInt(this.id_hospital)
     }
-    
+    console.log(formulario);
     
     this.hospitalService.addData(formulario).pipe(
     take(1)

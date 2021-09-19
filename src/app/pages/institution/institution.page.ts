@@ -6,6 +6,7 @@ import { tap } from 'rxjs/operators';
 import { HospitalService } from '../../services/hospital.service';
 import { Hospital } from '../hospitals/hospitals.model';
 import { StorageService } from '../../services/storage.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-institution',
@@ -15,11 +16,13 @@ import { StorageService } from '../../services/storage.service';
 export class InstitutionPage implements OnInit {
   
   hospitals$: Observable<Hospital[]>;
-  
+  numberTwo;
+  place;
+  id;
 
   form:FormGroup;
   modalReady = false;
-  constructor(private modalCtrl: ModalController, private hospitalService: HospitalService, private loadingCtrl:LoadingController, private storageService: StorageService) { 
+  constructor(private router:Router, private modalCtrl: ModalController, private hospitalService: HospitalService, private loadingCtrl:LoadingController, private storageService: StorageService) { 
     this.getAllStorage();
   }
 
@@ -42,6 +45,22 @@ export class InstitutionPage implements OnInit {
   salirSin(){
     this.modalCtrl.dismiss();
 
+  }
+
+  public optionsFn() { //here item is an object 
+    console.log(this.place);
+
+    let item = this.place; // Just did this in order to avoid changing the next lines of code :P
+    console.log(item.id);
+    return this.id = item.id;
+    
+  }
+
+  ruta(){
+    console.log(this.numberTwo);
+    console.log(this.optionsFn());
+    this.router.navigateByUrl(`data/${this.numberTwo}/${this.optionsFn()}`);
+    this.modalCtrl.dismiss();
   }
   ngAfterViewInit() {
     setTimeout(()=>{
