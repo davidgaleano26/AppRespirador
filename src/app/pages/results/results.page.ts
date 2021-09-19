@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { DataPage } from '../data/data.page';
 
 @Component({
   selector: 'app-results',
@@ -33,24 +32,24 @@ export class ResultsPage implements OnInit {
     }, 2300)
   }
 
+    
+   setResultColor(result) {
+     
+    result = parseInt(this.Resultado);
 
-   setResultColo(Result) {
-    switch (Result) {
-       case (Result < 5):
-         return 'green';
-         break;
-       case (Result >= 5 && Result < 10):
-         return 'yellow';
-         break;
-       case (Result >= 10 && Result < 15):
-         return 'orange';
-         break;
-       case (Result >= 15):
-        return 'red';
-      default:
-        return 'blue';
-        break;
-    } 
+    if (result >= 0 && result < 5)return 'green';
+    else if (result >= 5 && result < 10) return 'yellow';
+    else if (result >= 10 && result < 15) return  'orange';
+    else return  'red';
+    
+    }
+
+
+
+
+
+
+    
    }
 
-}
+
