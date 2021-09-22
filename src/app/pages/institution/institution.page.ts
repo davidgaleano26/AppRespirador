@@ -39,10 +39,12 @@ export class InstitutionPage implements OnInit {
     }
 
   async ngOnInit() {
+    this.ionViewDidEnter();
     const loading = await this.loadingCtrl.create({message: 'Cargando...'});
     loading.present();
 
     this.form = new FormGroup({
+      
       hospital: new FormControl(null,[Validators.required]),
       paciente_id: new FormControl(null,[Validators.required]),
     });
@@ -73,7 +75,6 @@ export class InstitutionPage implements OnInit {
     console.log(this.optionsFn());
     this.router.navigateByUrl(`data/${this.numberTwo}/${this.optionsFn()}`);
     this.modalCtrl.dismiss();
-    this.menuCtrl.enable(false);
   }
   ngAfterViewInit() {
     setTimeout(()=>{
