@@ -143,7 +143,7 @@ export class DataPage implements OnInit {
       excur_diafrag:this.form.get('excur_diafrag').value,
       engro_diafrag: this.form.get('engro_diafrag').value,
       velcontrac_diafra: this.form.get('velcontrac_diafra').value,
-      paciente_id: parseInt(this.id_paciente) ,
+      paciente_id: parseInt(this.id_paciente),
       hospital_id: parseInt(this.id_hospital)
     }
     console.log(formulario);

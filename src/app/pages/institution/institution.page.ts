@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ModalController, LoadingController } from '@ionic/angular';
+import { ModalController, LoadingController, MenuController } from '@ionic/angular';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { HospitalService } from '../../services/hospital.service';
@@ -22,9 +22,21 @@ export class InstitutionPage implements OnInit {
 
   form:FormGroup;
   modalReady = false;
-  constructor(private router:Router, private modalCtrl: ModalController, private hospitalService: HospitalService, private loadingCtrl:LoadingController, private storageService: StorageService) { 
+  constructor(private router:Router, 
+              private modalCtrl: ModalController, 
+              private hospitalService: HospitalService, 
+              private loadingCtrl:LoadingController, 
+              private storageService: StorageService,
+              private menuCtrl: MenuController) { 
     this.getAllStorage();
   }
+  ionViewDidEnter(): void {
+    this.menuCtrl.enable(false);
+   }
+   
+    ionViewDidLeave(): void {
+     this.menuCtrl.enable(true);
+    }
 
   async ngOnInit() {
     const loading = await this.loadingCtrl.create({message: 'Cargando...'});
@@ -61,6 +73,7 @@ export class InstitutionPage implements OnInit {
     console.log(this.optionsFn());
     this.router.navigateByUrl(`data/${this.numberTwo}/${this.optionsFn()}`);
     this.modalCtrl.dismiss();
+    this.menuCtrl.enable(false);
   }
   ngAfterViewInit() {
     setTimeout(()=>{
