@@ -18,7 +18,7 @@ export class InformationPage implements OnInit {
       },
       {
         img: 'assets/img/img-author.svg',
-        titulo: '<strong>Derechos de autor</strong>'
+        titulo: '<strong>Derechos de autor</strong> <br> <a rel="license" href="http://creativecommons.org/licenses/by-nd/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nd/4.0/88x31.png" /></a><br />Este obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-nd/4.0/">licencia de Creative Commons Reconocimiento-SinObraDerivada 4.0 Internacional</a>. <h5>Developed by: David Galeano - Hollman Rojas</h5>'
       }
     ];
   constructor() { }
