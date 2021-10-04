@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ModalController, LoadingController, MenuController } from '@ionic/angular';
 import { InstitutionPage } from '../institution/institution.page';
+import { IonProgressBar } from '@ionic/angular';
 
 
 @Component({
@@ -20,7 +21,9 @@ export class ResultsPage implements OnInit {
 
 
   modalReady = false;
-  constructor(private modalCtrl: ModalController, private loadingCtrl:LoadingController) { }
+  constructor(private modalCtrl: ModalController, private loadingCtrl:LoadingController, private ionProgressBar:IonProgressBar) {
+    ionProgressBar.type
+   }
 
   ngOnInit() {
     console.log(this.Resultado);
