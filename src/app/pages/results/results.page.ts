@@ -21,8 +21,7 @@ export class ResultsPage implements OnInit {
 
 
   modalReady = false;
-  constructor(private modalCtrl: ModalController, private loadingCtrl:LoadingController, private ionProgressBar:IonProgressBar) {
-    ionProgressBar.type
+  constructor(private modalCtrl: ModalController, private loadingCtrl:LoadingController) {
    }
 
   ngOnInit() {
