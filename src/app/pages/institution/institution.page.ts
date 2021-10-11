@@ -7,6 +7,7 @@ import { HospitalService } from '../../services/hospital.service';
 import { Hospital } from '../hospitals/hospitals.model';
 import { StorageService } from '../../services/storage.service';
 import { Router } from '@angular/router';
+import { HomePage } from '../home/home.page';
 
 @Component({
   selector: 'app-institution',
@@ -84,6 +85,10 @@ export class InstitutionPage implements OnInit {
 
   getAllStorage(){
     this.storageService.getData();
+  }
+
+  async home() {
+    component: HomePage
   }
 
 }
