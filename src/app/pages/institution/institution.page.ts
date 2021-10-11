@@ -88,7 +88,7 @@ export class InstitutionPage implements OnInit {
   }
 
   async home() {
-    component: HomePage
+    this.router.navigateByUrl('home');
   }
 
 }
