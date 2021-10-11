@@ -8,6 +8,7 @@ import { DataInformation } from '../pages/data/data.model'
   providedIn: 'root'
 })
 export class HospitalService {
+  
   apiUrl = "https://api-respirador-wb7ch.ondigitalocean.app/api"
   constructor(private http: HttpClient) { }
   

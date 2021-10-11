@@ -9,7 +9,7 @@
     </ion-item>
     <br>
     <ion-item>
-      <ion-select [interfaceOptions]="customAlertOptions" [(ngModel)]="place" (ionChange)="optionsFn();" interface="alert" multiple="false"
+      <ion-select  [(ngModel)]="place" (ionChange)="optionsFn();" interface="alert" multiple="false"
         placeholder="Seleccione un Hospital" formControlName="hospital">
         <ion-select-option *ngFor="let hospital of hospitals$|async" [value]="hospital">{{hospital.name}}
         </ion-select-option>
