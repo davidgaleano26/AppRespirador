@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { InstitutionPageRoutingModule } from './institution-routing.module';
 
 import { InstitutionPage } from './institution.page';
+import { Routes, RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
@@ -15,7 +16,14 @@ import { InstitutionPage } from './institution.page';
     IonicModule,
     InstitutionPageRoutingModule,
     ReactiveFormsModule,
+    RouterModule,
   ],
   declarations: [InstitutionPage]
 })
-export class InstitutionPageModule {}
+export class InstitutionPageModule {
+
+  
+}
+const routes: Routes =[
+  { path: 'hospitals', loadChildren: './pages/hospitals/hospitals.module' },
+]
