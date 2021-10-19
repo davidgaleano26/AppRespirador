@@ -91,4 +91,8 @@ export class InstitutionPage implements OnInit {
     this.router.navigateByUrl('home');
   }
 
+  closeModal(){
+    this.modalCtrl.dismiss();
+  }
+
 }

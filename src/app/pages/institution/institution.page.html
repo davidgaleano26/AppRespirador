@@ -16,7 +16,7 @@
       </ion-select>
     </ion-item>
     <br>
-    <ion-button [routerLink]="['/hospitals']">AGREGAR HOSPITAL</ion-button>
+    <a [routerLink]="['/hospitals']" (click)="closeModal()">AGREGAR HOSPITAL</a>
     <ion-grid fixed>
       <ion-row>
         <ion-col size="5" offset="1">

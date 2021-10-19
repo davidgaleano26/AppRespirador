@@ -25,5 +25,6 @@ export class InstitutionPageModule {
   
 }
 const routes: Routes =[
-  { path: 'hospitals', loadChildren: './pages/hospitals/hospitals.module' },
+  { path: 'hospitals', 
+  loadChildren: './pages/hospitals/hospitals.module' },
 ]
